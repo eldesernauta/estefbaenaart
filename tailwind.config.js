@@ -24,7 +24,7 @@ module.exports = {
         }]
       },
       letterSpacing: {
-        title: '0.8rem',
+        title: '0.6rem',
         text: '0.15rem'
       },
       minHeight: {
@@ -35,6 +35,9 @@ module.exports = {
       },
       animation: {
         spinText: "spin 60s linear infinite;"
+      },
+      height: {
+        '100': '600px',
       }
     },
   },

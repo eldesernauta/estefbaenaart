@@ -7,10 +7,14 @@ body {
   @apply bg-gray-100
 }
 
+a {
+  @apply no-underline font-Josefin text-lg tracking-widest
+}
+
 h1,
 h2,
 h3 {
-  @apply font-Slackside
+  @apply font-Slackside tracking-tighter
 }
 
 h2 {
@@ -22,6 +26,10 @@ h5,
 h6,
 p {
   @apply font-Josefin font-light
+}
+
+h6 {
+  @apply uppercase font-semibold tracking-title
 }
 
 p {
@@ -73,10 +81,12 @@ p {
 ::selection {
   @apply bg-black text-white
 }
-.emblem{
+
+.emblem {
   height: 300px;
 
 }
+
 span {
   position: absolute;
   transform-origin: 0 150px;

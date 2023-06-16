@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import Line from "../../components/line";
 import NavBar from "../../components/navBar";
-import CommissionButton from '../../components/commissionButton';
+import Commission from '../../components/commissions';
 
 const heroImg = require("../img/hero-image.jpg")
 const bioBg = require("../img/bio-bg.jpg")
@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         <div className="w/full md:w-3/6 flex flex-col justify-end items-start gap-3">
           <Line />
-          <h6 className="relative z-20 tracking-title">to my site</h6>
+          <h5 className="relative z-20 text-2xl tracking-title">to my site</h5>
         </div>
       </section>
       <section className="container mx-auto flex items-stretch -mt-20 relative pb-5">
@@ -55,12 +55,12 @@ export default function Home() {
           </div>
         </div>
         <div className="w-3/6 flex justify-end items-start">
-          <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0" />
+          <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0 h-100 object-cover object-top" />
         </div>
       </section>
       <section className="container mx-auto flex items-stretch my-20">
         <div className="relative w-6/6 md:w-3/6 flex justify-start items-center">
-          <Image src={bioBg} alt="Flowers" width={500} height={100} className="relative z-0" />
+          <Image src={bioBg} alt="Flowers" width={500} height={100} className="relative z-0 h-100 object-cover object-top" />
           <div className="absolute right-0 w-96 h-96 flex justify-start items-center">
             <Image src={catImg} alt="Cat Image" className="w-60 h-60 rounded-full" />
             <div className="emblem text-2xl font-light absolute top-11 left-30 animate-spinText">Estef Baena ~ Display Artist ~ </div>
@@ -76,14 +76,28 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="container mx-auto flex items-end">
-        <div className='w-4/12'>
-          <h2>Commissions</h2>
+      <Commission />
+      <section className='container mx-auto pb-52 flex flex-col gap-12'>
+        <div className='w-5/12 mx-auto text-center flex flex-col gap-5'>
+          <h2 className=''>Contact</h2>
+          <div className='w-9/12 mx-auto'>
+            <Line />
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie quis velit vel lacinia.</p>
         </div>
-        <div className='w-8/12 flex justify-center items-stretch gap-3'>
-          <div className='w-full'><CommissionButton price="$100 - $200" /></div>
-          <div className='w-full'><CommissionButton price="$200 - $500" /></div>
-          <div className='w-full'><CommissionButton price="Over $500" /></div>
+        <div className='w-8/12 mx-auto flex justify-between items-center'>
+          <div className='w-4/12 flex flex-col gap-5'>
+            <h6>Email</h6>
+            <a href=''>estefbaenaart@gmail.com</a>
+          </div>
+          <div className='w-4/12 flex flex-col gap-5'>
+            <h6>Phone</h6>
+            <a href=''>+1 (720) 591-5859</a>
+          </div>
+          <div className='w-4/12 flex flex-col gap-5'>
+            <h6>Location</h6>
+            <a href=''>Denver, Colorado U.S</a>
+          </div>
         </div>
       </section>
     </main>
