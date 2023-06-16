@@ -7,7 +7,7 @@ const logo = require('../src/img/logo.svg')
 const NavBar = () => {
 
     return (
-        <nav className="container mx-auto py-3 flex justify-between items-center text-white absolute top-0 left-10 z-50">
+        <nav className="container mx-auto py-3 flex justify-between items-center text-white">
             <NavbarButton />
 
             <Image src={logo} alt="Logo" width={`250`} height={`40`} />

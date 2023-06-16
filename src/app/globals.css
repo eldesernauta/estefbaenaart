@@ -4,7 +4,7 @@
 @tailwind base;
 
 body {
-  @apply bg-gray-100 select-none
+  @apply bg-gray-100
 }
 
 h1,
@@ -12,9 +12,11 @@ h2,
 h3 {
   @apply font-Slackside
 }
-h2{
+
+h2 {
   @apply text-8xl
 }
+
 h4,
 h5,
 h6,
@@ -23,7 +25,7 @@ p {
 }
 
 p {
-  @apply tracking-text 
+  @apply tracking-text
 }
 
 @tailwind components;
@@ -68,6 +70,15 @@ p {
 
 @tailwind utilities;
 
-::selection{
+::selection {
   @apply bg-black text-white
+}
+.emblem{
+  height: 300px;
+
+}
+span {
+  position: absolute;
+  transform-origin: 0 150px;
+  animation: animate 5s linear infinite;
 }

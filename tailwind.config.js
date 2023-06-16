@@ -29,6 +29,12 @@ module.exports = {
       },
       minHeight: {
         '1/2': '50vh',
+      },
+      spacing: {
+        '30': '120px',
+      },
+      animation: {
+        spinText: "spin 60s linear infinite;"
       }
     },
   },

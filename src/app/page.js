@@ -1,16 +1,35 @@
 'use client';
-import NavBar from "../../components/navBar"
+import { useEffect } from 'react';
 import Image from "next/image";
-import Line from "../../components/line";
-import ReactPlayer from 'react-player'
 
-const heroImg = require("../img/estef.jpg")
-const video = require("../img/estef_display.mp4")
+import Line from "../../components/line";
+import NavBar from "../../components/navBar";
+import CommissionButton from '../../components/commissionButton';
+
+const heroImg = require("../img/hero-image.jpg")
+const bioBg = require("../img/bio-bg.jpg")
+const catImg = require("../img/cat-image.jpg")
+
 export default function Home() {
+  const ele = document.querySelectorAll("span")
+  for (var i = 1; i < ele.length; i++) {
+    ele[i].style.transform = "rotate(" + i * 14 + "deg)"
+  }
+  useEffect(() => {
+
+    const emblem = document.querySelector('.emblem');
+    if (emblem) {
+      emblem.innerHTML = emblem.textContent.replace(/\S/g, "<span>$&</span>")
+    }
+
+
+  }, []);
+
+
   return (
     <main className="w-full p-0 m-0">
       <NavBar />
-      <section id="s1" className="container mt-24 mx-0 md:mx-auto h-24 flex flex-col md:flex-row justify-center items-center md:items-end gap-5 z-10 relative">
+      <section id="s1" className="container mt-12 mx-0 md:mx-auto h-24 flex flex-col md:flex-row justify-center items-center md:items-end gap-5 z-10 relative pointer-events-none">
         <div className="w-3/6 flex justify-center items-end">
           <h1 className="font-Slackside text-8xl md:text-10xl">Welcome</h1>
         </div>
@@ -20,10 +39,10 @@ export default function Home() {
         </div>
       </section>
       <section className="container mx-auto flex items-stretch -mt-20 relative pb-5">
-        <div className="w-3/6 flex flex-col justify-between items-center">
+        <div className="w-3/6 flex flex-col justify-between items-stretch">
           <hr />
-          <h4 className="text-3xl">portraits</h4>
-          <div className="flex flex-col gap-3">
+          <h4 className="text-3xl self-center">portraits</h4>
+          <div className="flex flex-col gap-5">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
             <div className="flex">
               <Line />
@@ -39,9 +58,13 @@ export default function Home() {
           <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0" />
         </div>
       </section>
-      <section className="container mx-auto flex items-stretch ">
-        <div className="w-3/6 flex justify-start items-center">
-          <ReactPlayer url={video} />
+      <section className="container mx-auto flex items-stretch my-20">
+        <div className="relative w-6/6 md:w-3/6 flex justify-start items-center">
+          <Image src={bioBg} alt="Flowers" width={500} height={100} className="relative z-0" />
+          <div className="absolute right-0 w-96 h-96 flex justify-start items-center">
+            <Image src={catImg} alt="Cat Image" className="w-60 h-60 rounded-full" />
+            <div className="emblem text-2xl font-light absolute top-11 left-30 animate-spinText">Estef Baena ~ Display Artist ~ </div>
+          </div>
         </div>
         <div className="w-3/6 flex flex-col justify-end items-center">
           <h2>Bio</h2>
@@ -54,17 +77,13 @@ export default function Home() {
         </div>
       </section>
       <section className="container mx-auto flex items-end">
-        <div>
-          <h2>Commisions</h2>
+        <div className='w-4/12'>
+          <h2>Commissions</h2>
         </div>
-        <div>
-          <table>
-            <tr>
-              <td><button>Hola</button></td>
-              <td><button>Hola</button></td>
-              <td><button>Hola</button></td>
-            </tr>
-          </table>
+        <div className='w-8/12 flex justify-center items-stretch gap-3'>
+          <div className='w-full'><CommissionButton price="$100 - $200" /></div>
+          <div className='w-full'><CommissionButton price="$200 - $500" /></div>
+          <div className='w-full'><CommissionButton price="Over $500" /></div>
         </div>
       </section>
     </main>
