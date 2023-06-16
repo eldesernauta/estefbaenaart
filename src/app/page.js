@@ -5,6 +5,7 @@ import Image from "next/image";
 import Line from "../../components/line";
 import NavBar from "../../components/navBar";
 import Commission from '../../components/commissions';
+import Footer from '../../components/footer';
 
 const heroImg = require("../img/hero-image.jpg")
 const bioBg = require("../img/bio-bg.jpg")
@@ -16,15 +17,11 @@ export default function Home() {
     ele[i].style.transform = "rotate(" + i * 14 + "deg)"
   }
   useEffect(() => {
-
     const emblem = document.querySelector('.emblem');
     if (emblem) {
       emblem.innerHTML = emblem.textContent.replace(/\S/g, "<span>$&</span>")
     }
-
-
   }, []);
-
 
   return (
     <main className="w-full p-0 m-0">
@@ -77,7 +74,7 @@ export default function Home() {
         </div>
       </section>
       <Commission />
-      <section className='container mx-auto pb-52 flex flex-col gap-12'>
+      <section className='container mx-auto mb-14 flex flex-col gap-12'>
         <div className='w-5/12 mx-auto text-center flex flex-col gap-5'>
           <h2 className=''>Contact</h2>
           <div className='w-9/12 mx-auto'>
@@ -86,20 +83,21 @@ export default function Home() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie quis velit vel lacinia.</p>
         </div>
         <div className='w-8/12 mx-auto flex justify-between items-center'>
-          <div className='w-4/12 flex flex-col gap-5'>
+          <div className='w-auto flex flex-col gap-5'>
             <h6>Email</h6>
             <a href=''>estefbaenaart@gmail.com</a>
           </div>
-          <div className='w-4/12 flex flex-col gap-5'>
+          <div className='w-auto flex flex-col gap-5'>
             <h6>Phone</h6>
             <a href=''>+1 (720) 591-5859</a>
           </div>
-          <div className='w-4/12 flex flex-col gap-5'>
+          <div className='w-auto flex flex-col gap-5'>
             <h6>Location</h6>
             <a href=''>Denver, Colorado U.S</a>
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
