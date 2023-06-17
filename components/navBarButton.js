@@ -4,8 +4,10 @@ import { gsap } from 'gsap';
 const NavbarButton = (props) => {
 
     const [isOpen, setIsOpen] = useState(false);
+
     const genericHamburgerLine = `h-1 w-8 my-1 rounded-full
-     bg-black transition ease transform duration-300`;
+    bg-black transition ease transform duration-300`;
+
 
     const showMenu = () => {
         setIsOpen(!isOpen)

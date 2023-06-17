@@ -11,7 +11,7 @@ const NavBar = () => {
     const menuRef = useRef(null);
 
     const handleToggleMenu = () => {
-        setShowMenu((prevShowMenu) => !prevShowMenu);
+        setShowMenu(!showMenu);
         const menu = menuRef.current;
         if (!showMenu) {
             gsap.to(menu, { x: '0%', duration: 0.3, ease: 'power2.out' });
@@ -27,6 +27,12 @@ const NavBar = () => {
                 ref={menuRef}
                 className="fixed inset-y-0 left-0  flex flex-col bg-black w-64 p-6 text-white z-50"
             >
+            <button
+              className="text-white font-bold text-lg mb-4 absolute top-4 right-4"
+              onClick={handleToggleMenu}
+            >
+              &#10005;
+            </button>
                 <ul className="font-Josefine">
                     <li className="mb-2">
                         <a className="text-white  text-xl" href="#home">
