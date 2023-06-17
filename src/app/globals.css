@@ -18,7 +18,7 @@ h3 {
 }
 
 h2 {
-  @apply text-8xl
+  @apply text-6xl md:text-8xl
 }
 
 h4,
@@ -95,7 +95,6 @@ p {
   height: 300px;
 
 }
-
 span {
   position: absolute;
   transform-origin: 0 150px;

@@ -8,6 +8,7 @@ const handleClick = (e) => {
 };
 
 const Footer = () => {
+    
     useEffect(() => {
         const handleClick = (e) => {
             e.preventDefault();
@@ -31,12 +32,10 @@ const Footer = () => {
 
 
     return (
-        <section className="container mx-auto flex justify-between items-end pb-10">
-            <div className="w-9/12 flex justify-start items-center gap-5">
-                <Link to="/" passHref spy={true} smooth={true} offset={50} duration={500}>
-                    <a id="top-link" className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
-                        Home
-                    </a>
+        <section className="container mx-auto flex flex-col md:flex-row justify-between items-end gap-5 md:gap-0 pb-10">
+            <div className="w-full md:w-9/12 flex justify-center md:justify-start items-stretch md:items-center gap-0 md:gap-5">
+                <Link id="top-link" to="/" passhref spy={true} smooth={true} offset={50} duration={500} className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
+                    Home
                 </Link>
                 <Link to="bio" spy={true} smooth={true} offset={50} duration={500}
                     className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
@@ -51,7 +50,7 @@ const Footer = () => {
                     Linkedin
                 </a>
             </div>
-            <div className="w-3/12 flex justify-end">
+            <div className="w-full md:w-3/12 flex justify-center md:justify-end">
                 <p>2023 © Estef Baena</p>
             </div>
         </section>

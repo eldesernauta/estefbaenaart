@@ -1,20 +1,31 @@
-import SplitType from 'split-type'
-import { gsap } from 'gsap'
+import { useEffect, useRef } from 'react';
+import SplitType from 'split-type';
+import { gsap } from 'gsap';
 
 const WordAnimation = (props) => {
+    const textRef = useRef(null);
 
-    const text = SplitType.create("#target")
-    gsap.to(".char", {
-        y:0,
-        stagger: 0.05,
-        delay: 0.2,
-        yoyo: true,
-        duration: .1,
-    })
+    useEffect(() => {
+        const text = SplitType.create(textRef.current);
+        const timeline = gsap.timeline({ repeat: -1, repeatDelay: 5 });
 
-    return(
-        <h4 id="target" className="text-3xl self-center">{props.word}</h4>
-    )
-}
+        timeline.to('.char', {
+            y: 1,
+            stagger: 0.05,
+            delay: 0.2,
+            duration: 0.5,
+        });
+    }, []);
 
-export default WordAnimation
+    return (
+        <h4
+            ref={textRef}
+            className="text-3xl self-center mask-polygon"
+            id="target"
+        >
+            {props.word}
+        </h4>
+    );
+};
+
+export default WordAnimation;

@@ -20,12 +20,12 @@ const Commissions = () => {
     };
 
     return (
-        <section id="commissions" className="container mx-auto flex flex-col gap-12 mb-20">
-            <div className='w-full flex justify-between items-end'>
-                <div className='w-4/12 text-left'>
+        <section id="commissions" className="container mx-auto flex flex-col gap-5 md:gap-12 mb-10 md:mb-20 px-5 md:px-0">
+            <div className='w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:items-end gap-5 md:gap-0'>
+                <div className='w-full md:w-4/12 text-center md:text-left'>
                     <h2>Commissions</h2>
                 </div>
-                <div className='w-8/12 flex justify-between gap-3'>
+                <div className='w-full md:w-8/12 flex justify-between items-stretch md:items-center gap-1 md:gap-3'>
                     <div className='w-4/12'
                         onClick={() => handleTabChange(0)}><CommissionButton active={activeTab} price="$100 - $200" /></div>
                     <div className='w-4/12'
@@ -35,9 +35,9 @@ const Commissions = () => {
                 </div>
             </div>
             <div
-                className={`w-full flex ${activeTab === 0 ? '' : 'hidden'}`}
+                className={`w-full flex flex-col md:flex-row ${activeTab === 0 ? '' : 'hidden'}`}
                 ref={animateContent}>
-                <div className='w-3/12 bg-white flex flex-col items-center justify-center p-4 gap-5'>
+                <div className='w-full md:w-3/12 bg-white flex flex-col items-center justify-center py-8 md:py-4 px-5 md:px-4 gap-3 md:gap-5'>
                     <h4 className='text-4xl font-semibold'>Lorem Ipsum</h4>
                     <p className="text-center my-5">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie quis velit vel lacinia. Suspendisse ut enim non massa facilisis accumsan. Maecenas at laoreet quam, posuere convallis nisi.
@@ -48,14 +48,14 @@ const Commissions = () => {
                         I want it!
                     </button>
                 </div>
-                <div className='w-9/12'>
+                <div className='w-full md:w-9/12'>
                     <Image src={whaleImg} alt="Whale Commissions Image" className='w-full h-100 object-cover' />
                 </div>
             </div>
             <div
-                className={`w-full flex ${activeTab === 1 ? '' : 'hidden'}`}
+                className={`w-full flex flex-col md:flex-row ${activeTab === 1 ? '' : 'hidden'}`}
                 ref={animateContent}>
-                <div className='w-3/12 bg-white flex flex-col items-center justify-center p-4 gap-5'>
+                <div className='w-full md:w-3/12 bg-white flex flex-col items-center justify-center py-8 md:py-4 px-5 md:px-4 gap-3 md:gap-5'>
                     <h4 className='text-4xl font-semibold'>Lorem Ipsum</h4>
                     <p className="text-center my-5">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie quis velit vel lacinia. Suspendisse ut enim non massa facilisis accumsan. Maecenas at laoreet quam, posuere convallis nisi.
@@ -66,14 +66,14 @@ const Commissions = () => {
                         I want it!
                     </button>
                 </div>
-                <div className='w-9/12'>
+                <div className='w-full md:w-9/12'>
                     <Image src={chimpanzeeImg} alt="Whale Commissions Image" className='w-full h-100 object-cover' />
                 </div>
             </div>
             <div
-                className={`w-full flex ${activeTab === 2 ? '' : 'hidden'}`}
+                className={`w-full flex flex-col md:flex-row ${activeTab === 2 ? '' : 'hidden'}`}
                 ref={animateContent}>
-                <div className='w-3/12 bg-white flex flex-col items-center justify-center p-4 gap-5'>
+                <div className='w-full md:w-3/12 bg-white flex flex-col items-center justify-center py-8 md:py-4 px-5 md:px-4 gap-3 md:gap-5'>
                     <h4 className='text-4xl font-semibold'>Lorem Ipsum</h4>
                     <p className="text-center my-5">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie quis velit vel lacinia. Suspendisse ut enim non massa facilisis accumsan. Maecenas at laoreet quam, posuere convallis nisi.
@@ -84,7 +84,7 @@ const Commissions = () => {
                         I want it!
                     </button>
                 </div>
-                <div className='w-9/12'>
+                <div className='w-full md:w-9/12'>
                     <Image src={elephantImg} alt="Whale Commissions Image" className='w-full h-100 object-cover object-top' />
                 </div>
             </div>

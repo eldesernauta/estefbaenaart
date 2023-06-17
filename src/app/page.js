@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import Image from "next/image";
 import { Link } from "react-scroll"
 
+import Loading from '../../components/loading';
 import Line from "../../components/line";
 import NavBar from "../../components/navBar";
 import Commission from '../../components/commissions';
@@ -17,56 +18,50 @@ const catImg = require("../img/cat-image.jpg")
 
 export default function Home() {
   useEffect(() => {
-    const ele = document.querySelectorAll("span")
+    const ele = document.querySelectorAll("span");
     for (var i = 1; i < ele.length; i++) {
-      ele[i].style.transform = "rotate(" + i * 14.5 + "deg)"
+      ele[i].style.transform = "rotate(" + i * 14.5 + "deg)";
     }
   }, []);
-  const ele = document.querySelectorAll("span")
-  for (var i = 1; i < ele.length; i++) {
-    ele[i].style.transform = "rotate(" + i * 14.5 + "deg)"
-  }
+
+
   useEffect(() => {
     const emblem = document.querySelector('.emblem');
     if (emblem) {
-      emblem.innerHTML = emblem.textContent.replace(/\S/g, "<span>$&</span>")
+      emblem.innerHTML = emblem.textContent.replace(/\S/g, "<span>$&</span>");
     }
-
   }, []);
-
   return (
     <main className="w-full p-0 m-0">
       {/* Navigation bar */}
       <NavBar />
-
       {/* Title section: Welcome */}
       <Title />
 
       {/* Hero section */}
-      <section className="container mx-auto flex items-stretch -mt-20 relative pb-5">
-        <div className="w-3/6 flex flex-col justify-between items-stretch">
+      <section className="container mx-auto flex flex-col-reverse md:flex-row items-stretch -mt-4 md:-mt-20 relative">
+        <div className="w-full md:w-3/6 h-52 md:h-auto flex flex-col justify-between items-stretch px-5 md:px-0">
           <hr className="opacity-0" />
-          {/* <h4 className="text-3xl self-center">portraits</h4> */}
           <WordAnimation word="display artist" />
           <div className="flex flex-col gap-5">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
             <div className="flex">
               <Line />
               <Link to="commissions" spy={true} smooth={true} offset={50} duration={500}
-                className="w-2/6 text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
+                className="w-3/6 md:w-2/6 text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
               >
                 Read More
               </Link>
             </div>
           </div>
         </div>
-        <div className="w-3/6 flex justify-end items-start">
+        <div className="w-full md:w-3/6 flex justify-end items-start">
           <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0 h-100 object-cover" />
         </div>
       </section>
 
       {/* Biography section */}
-      <section id='bio' className="container mx-auto flex flex-col md:flex-row items-stretch my-20">
+      <section id='bio' className="container mx-auto flex flex-col md:flex-row items-stretch my-10 md:my-20 px-5 md:px-0">
         <div className="relative w-6/6 md:w-3/6 flex justify-start items-center">
           <Image src={bioBg} alt="Flowers" width={500} height={100} className="relative z-0 h-100 object-cover object-top hidden xl:block" />
           <div className="block md:absolute lg:right-0 xl:-right-24 2xl:right-0 w-full lg:w-96 h-96 flex justify-center md:justify-start items-center">
@@ -89,24 +84,24 @@ export default function Home() {
       <Commission />
 
       {/* Contact section */}
-      <section id='contact' className='container mx-auto mb-32 flex flex-col gap-12'>
-        <div className='w-5/12 mx-auto text-center flex flex-col gap-5'>
+      <section id='contact' className='container mx-auto mb-20 md:mb-32 flex flex-col gap-12 px-5 md:px-0'>
+        <div className='w-full md:w-5/12 mx-auto text-center flex flex-col gap-5'>
           <h2 className=''>Contact</h2>
           <div className='w-9/12 mx-auto'>
             <Line />
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie quis velit vel lacinia.</p>
         </div>
-        <div className='w-8/12 mx-auto flex justify-between items-center'>
-          <div className='w-auto flex flex-col gap-5'>
+        <div className='w-full md:w-8/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0 px-4 md:px-0'>
+          <div className='w-full md:w-auto flex flex-col gap-2 md:gap-5'>
             <h6>Email</h6>
             <a href='mailto:estefbaenaart@gmail.com' target='_blank'>estefbaenaart@gmail.com</a>
           </div>
-          <div className='w-auto flex flex-col gap-5'>
+          <div className='w-full md:w-auto flex flex-col gap-2 md:gap-5'>
             <h6>Phone</h6>
             <a href='tel:*17295915859' target='_blank'>+1 (720) 591-5859</a>
           </div>
-          <div className='w-auto flex flex-col gap-5'>
+          <div className='w-full md:w-auto flex flex-col gap-2 md:gap-5'>
             <h6>Location</h6>
             <a href=''>Denver, Colorado U.S</a>
           </div>
@@ -117,6 +112,6 @@ export default function Home() {
       <Footer />
 
     </main>
+
   );
 }
-

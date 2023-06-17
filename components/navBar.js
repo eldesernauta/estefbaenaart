@@ -29,12 +29,12 @@ const NavBar = () => {
     }, []);
 
     return (
-        <nav className="container mx-auto py-3 flex justify-between items-center text-white">
+        <nav className="container mx-auto py-3 flex flex-col md:flex-row justify-between gap-3 md:gap-0 items-center text-white">
             <NavbarButton action={handleToggleMenu} showMenu={showMenu} />
             <div
                 ref={menuRef}
-                className="fixed inset-y-0 left-0  flex flex-col bg-gray-900 w-64 p-6 text-white z-50 justify-between items-start"
-            >
+                className="fixed inset-y-0 left-0 box-border flex flex-col bg-gray-900 w-[calc(100%-15px)] md:w-64 p-6 text-white z-50 justify-between items-start"
+                >
                 <button
                     className="text-white font-bold text-lg mb-4 absolute top-4 right-4"
                     onClick={handleToggleMenu}
@@ -63,19 +63,19 @@ const NavBar = () => {
                         </Link>
                     </li>
                 </ul>
-                <div className='flex flex-col gap-5'>
-                    <Image src={logo} alt="Logo" width={`250`} height={`40`} className='invert' />
+                <div className='w-full flex flex-col gap-5'>
+                    <Image src={logo} alt="Logo" width={`250`} height={`40`} className='invert mx-auto' />
                     <ul className='w-full flex justify-center items-center gap-3'>
-                        <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faFacebookF} size='15' /></li>
-                        <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faInstagram} size='15' /></li>
-                        <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faLinkedinIn} size='15' /></li>
+                        <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faFacebookF} style={{ fontSize: 15 }} /></li>
+                        <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faInstagram} style={{ fontSize: 15 }} /></li>
+                        <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faLinkedinIn} style={{ fontSize: 15 }} /></li>
                     </ul>
                 </div>
 
             </div>
             <Image src={logo} alt="Logo" width={`250`} height={`40`} />
             <Link to="contact" spy={true} smooth={true} offset={50} duration={500}
-                className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
+                className="text-black px-4 py-0 m-0 md:-m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
             >
                 Contact
             </Link>
