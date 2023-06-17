@@ -5,7 +5,7 @@ const whaleImg = require("../src/img/commissions.jpg")
 
 const Commissions = () => {
     return (
-        <section className="container mx-auto flex flex-col gap-12 mb-20">
+        <section id="commissions" className="container mx-auto flex flex-col gap-12 mb-20">
             <div className='w-full flex justify-between items-end'>
                 <div className='w-4/12 text-left'>
                     <h2>Commissions</h2>

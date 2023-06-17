@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="w-full p-0 m-0">
       <NavBar />
-      <section id="s1" className="container mt-12 mx-0 md:mx-auto h-24 flex flex-col md:flex-row justify-center items-center md:items-end gap-5 z-10 relative pointer-events-none">
+      <section id="home" className="container mt-12 mx-0 md:mx-auto h-24 flex flex-col md:flex-row justify-center items-center md:items-end gap-5 z-10 relative pointer-events-none">
         <div className="w-3/6 flex justify-center items-end">
           <h1 className="font-Slackside text-8xl md:text-10xl">Welcome</h1>
         </div>
@@ -43,19 +43,19 @@ export default function Home() {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
             <div className="flex">
               <Line />
-              <button
+              <a href='#commissions'
                 className="w-2/6 text-black px-4 py-0 -m-3 rounded font-Josefin uppercase font-semibold tracking-widest"
               >
                 Read More
-              </button>
+              </a>
             </div>
           </div>
         </div>
         <div className="w-3/6 flex justify-end items-start">
-          <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0 h-100 object-cover object-top" />
+          <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0 h-100 object-cover" />
         </div>
       </section>
-      <section className="container mx-auto flex items-stretch my-20">
+      <section id='bio' className="container mx-auto flex items-stretch my-20">
         <div className="relative w-6/6 md:w-3/6 flex justify-start items-center">
           <Image src={bioBg} alt="Flowers" width={500} height={100} className="relative z-0 h-100 object-cover object-top" />
           <div className="absolute right-0 w-96 h-96 flex justify-start items-center">
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
       <Commission />
-      <section className='container mx-auto mb-14 flex flex-col gap-12'>
+      <section id='contact' className='container mx-auto mb-32 flex flex-col gap-12'>
         <div className='w-5/12 mx-auto text-center flex flex-col gap-5'>
           <h2 className=''>Contact</h2>
           <div className='w-9/12 mx-auto'>
@@ -85,11 +85,11 @@ export default function Home() {
         <div className='w-8/12 mx-auto flex justify-between items-center'>
           <div className='w-auto flex flex-col gap-5'>
             <h6>Email</h6>
-            <a href=''>estefbaenaart@gmail.com</a>
+            <a href='mailto:estefbaenaart@gmail.com' target='_blank'>estefbaenaart@gmail.com</a>
           </div>
           <div className='w-auto flex flex-col gap-5'>
             <h6>Phone</h6>
-            <a href=''>+1 (720) 591-5859</a>
+            <a href='tel:*17295915859' target='_blank'>+1 (720) 591-5859</a>
           </div>
           <div className='w-auto flex flex-col gap-5'>
             <h6>Location</h6>

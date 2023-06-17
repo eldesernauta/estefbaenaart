@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const NavbarButton = () => {
+const NavbarButton = (props) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const genericHamburgerLine = `h-1 w-8 my-1 rounded-full
      bg-black transition ease transform duration-300`;
 
+    const showMenu = () => {
+        setIsOpen(!isOpen)
+        props.action()
+    }
+
     return (
         <button
             className="flex flex-col h-12 w-12 rounded justify-center items-center group scale-75"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={showMenu}
         >
             <div
                 className={`${genericHamburgerLine} ${isOpen
