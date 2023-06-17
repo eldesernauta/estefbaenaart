@@ -2,12 +2,14 @@
 
 import { useEffect } from 'react';
 import Image from "next/image";
+import { Link } from "react-scroll"
 
 import Line from "../../components/line";
 import NavBar from "../../components/navBar";
 import Commission from '../../components/commissions';
 import Footer from '../../components/footer';
 import Title from '../../components/title';
+import WordAnimation from '../../components/wordAnimation';
 
 const heroImg = require("../img/hero-image.jpg")
 const bioBg = require("../img/bio-bg.jpg")
@@ -29,6 +31,7 @@ export default function Home() {
     if (emblem) {
       emblem.innerHTML = emblem.textContent.replace(/\S/g, "<span>$&</span>")
     }
+
   }, []);
 
   return (
@@ -42,17 +45,18 @@ export default function Home() {
       {/* Hero section */}
       <section className="container mx-auto flex items-stretch -mt-20 relative pb-5">
         <div className="w-3/6 flex flex-col justify-between items-stretch">
-          <hr />
-          <h4 className="text-3xl self-center">portraits</h4>
+          <hr className="opacity-0" />
+          {/* <h4 className="text-3xl self-center">portraits</h4> */}
+          <WordAnimation word="display artist" />
           <div className="flex flex-col gap-5">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
             <div className="flex">
               <Line />
-              <a href='#commissions'
-                className="w-2/6 text-black px-4 py-0 -m-3 rounded font-Josefin uppercase font-semibold tracking-widest"
+              <Link to="commissions" spy={true} smooth={true} offset={50} duration={500}
+                className="w-2/6 text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
               >
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -82,6 +82,15 @@ p {
   @apply bg-black text-white
 }
 
+#target {
+  clip-path: polygon(0 0, 100% 1%, 100% 100%, 0% 100%);
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform .5s;
+}
+
 .emblem {
   height: 300px;
 
