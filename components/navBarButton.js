@@ -8,6 +8,7 @@ const NavbarButton = (props) => {
     const genericHamburgerLine = `h-1 w-8 my-1 rounded-full
     bg-black transition ease transform duration-300`;
 
+    const matchClose = props.showMenu
 
     const showMenu = () => {
         setIsOpen(!isOpen)
@@ -20,7 +21,7 @@ const NavbarButton = (props) => {
             onClick={showMenu}
         >
             <div
-                className={`${genericHamburgerLine} ${isOpen
+                className={`${genericHamburgerLine} ${props.showMenu
                     ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
                     : "opacity-50 translate-y-2 group-hover:opacity-100"
                     }`}
@@ -30,7 +31,7 @@ const NavbarButton = (props) => {
                     }`}
             />
             <div
-                className={`${genericHamburgerLine} ${isOpen
+                className={`${genericHamburgerLine} ${props.showMenu
                     ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
                     : "opacity-50 -translate-y-2 group-hover:opacity-100"
                     }`}

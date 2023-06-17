@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 import Image from 'next/image';
 import NavbarButton from './navBarButton';
@@ -22,17 +24,17 @@ const NavBar = () => {
 
     return (
         <nav className="container mx-auto py-3 flex justify-between items-center text-white">
-            <NavbarButton action={handleToggleMenu} />
+            <NavbarButton action={handleToggleMenu} showMenu={showMenu} />
             <div
                 ref={menuRef}
-                className="fixed inset-y-0 left-0  flex flex-col bg-black w-64 p-6 text-white z-50"
+                className="fixed inset-y-0 left-0  flex flex-col bg-black w-64 p-6 text-white z-50 justify-between items-start"
             >
-            <button
-              className="text-white font-bold text-lg mb-4 absolute top-4 right-4"
-              onClick={handleToggleMenu}
-            >
-              &#10005;
-            </button>
+                <button
+                    className="text-white font-bold text-lg mb-4 absolute top-4 right-4"
+                    onClick={handleToggleMenu}
+                >
+                    &#10005;
+                </button>
                 <ul className="font-Josefine">
                     <li className="mb-2">
                         <a className="text-white  text-xl" href="#home">
@@ -55,6 +57,12 @@ const NavBar = () => {
                         </a>
                     </li>
                 </ul>
+                <ul className='w-full flex justify-center items-center gap-3'>
+                    <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faFacebookF} size='15' /></li>
+                    <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faInstagram} size='15' /></li>
+                    <li className='mx-2 hover:text-gray-500 cursor-pointer transition duration-500'><FontAwesomeIcon icon={faLinkedinIn} size='15' /></li>
+                </ul>
+
             </div>
             <Image src={logo} alt="Logo" width={`250`} height={`40`} />
             <a
