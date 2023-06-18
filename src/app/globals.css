@@ -18,7 +18,7 @@ h3 {
 }
 
 h2 {
-  @apply text-6xl md:text-8xl
+  @apply text-6xl md:text-8xl lg:text-7xl 2xl:text-8xl
 }
 
 h4,

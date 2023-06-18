@@ -32,8 +32,8 @@ const Footer = () => {
 
 
     return (
-        <section className="container mx-auto flex flex-col md:flex-row justify-between items-end gap-5 md:gap-0 pb-10">
-            <div className="w-full md:w-9/12 flex justify-center md:justify-start items-stretch md:items-center gap-0 md:gap-5">
+        <section className="container mx-auto flex flex-col lg:flex-row justify-between items-end gap-5 lg:gap-0 pb-10 px-0 lg:px-5 2xl:px-0">
+            <div className="w-full lg:w-9/12 flex justify-center lg:justify-start items-stretch lg:items-center gap-0 lg:gap-5">
                 <Link id="top-link" to="/" passhref spy={true} smooth={true} offset={50} duration={500} className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
                     Home
                 </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                     Linkedin
                 </a>
             </div>
-            <div className="w-full md:w-3/12 flex justify-center md:justify-end">
+            <div className="w-full lg:w-3/12 flex justify-center lg:justify-end">
                 <p>2023 © Estef Baena</p>
             </div>
         </section>

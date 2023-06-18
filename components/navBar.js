@@ -11,6 +11,7 @@ const logo = require('../src/img/logo.svg')
 
 const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
+    
     const menuRef = useRef(null);
 
     const handleToggleMenu = () => {
@@ -29,7 +30,7 @@ const NavBar = () => {
     }, []);
 
     return (
-        <nav className="container mx-auto py-3 flex flex-col md:flex-row justify-between gap-3 md:gap-0 items-center text-white">
+        <nav className="container mx-auto py-3 flex flex-col md:flex-row justify-between gap-3 md:gap-0 items-center text-white px-0 md:px-5 2xl:px-0">
             <NavbarButton action={handleToggleMenu} showMenu={showMenu} />
             <div
                 ref={menuRef}
