@@ -4,7 +4,6 @@ import { useEffect, useState, useLayoutEffect } from 'react';
 import Image from "next/image";
 import { Link } from "react-scroll"
 
-import Loading from '../../components/loading';
 import Line from "../../components/line";
 import NavBar from "../../components/navBar";
 import Commission from '../../components/commissions';
@@ -12,7 +11,7 @@ import Footer from '../../components/footer';
 import Title from '../../components/title';
 import WordAnimation from '../../components/wordAnimation';
 
-const heroImg = require("../img/hero-image.jpg")
+const heroBg = require("../img/hero-bg.jpg")
 const bioBg = require("../img/bio-bg.jpg")
 const catImg = require("../img/cat-image.jpg")
 
@@ -23,8 +22,10 @@ export default function Home() {
       ele[i].style.transform = "rotate(" + i * 14.5 + "deg)";
     }
   }, []);
-
-
+  const ele = document.querySelectorAll("span");
+  for (var i = 1; i < ele.length; i++) {
+    ele[i].style.transform = "rotate(" + i * 14.5 + "deg)";
+  }
   useEffect(() => {
     const emblem = document.querySelector('.emblem');
     if (emblem) {
@@ -39,7 +40,13 @@ export default function Home() {
       <Title />
 
       {/* Hero section */}
-      <section className="container mx-auto flex flex-col-reverse md:flex-row items-stretch -mt-4 md:-mt-20 relative">
+      <section className="container h-[calc(100vh-300px)] mx-auto flex flex-col-reverse md:flex-row items-stretch -mt-4 md:-mt-12 relative">
+
+        <Image src={heroBg} alt="hero image"
+          layout="fill"
+          objectFit="cover"
+          quality={100} className="relative z-0 opacity-50 object-bottom mix-blend-darken" />
+
         <div className="w-full md:w-3/6 h-52 md:h-auto flex flex-col justify-between items-stretch px-5 md:px-0">
           <hr className="opacity-0" />
           <WordAnimation word="display artist" />
@@ -54,9 +61,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="w-full md:w-3/6 flex justify-end items-start">
-          <Image src={heroImg} alt="hero image" width={500} height={100} className="relative z-0 h-100 object-cover" />
+        </div><div className="w-full md:w-3/6 flex justify-end items-start">
         </div>
       </section>
 
@@ -64,6 +69,7 @@ export default function Home() {
       <section id='bio' className="container mx-auto flex flex-col md:flex-row items-stretch my-10 md:my-20 px-5 md:px-0">
         <div className="relative w-6/6 md:w-3/6 flex justify-start items-center">
           <Image src={bioBg} alt="Flowers" width={500} height={100} className="relative z-0 h-100 object-cover object-top hidden xl:block" />
+
           <div className="block md:absolute lg:right-0 xl:-right-24 2xl:right-0 w-full lg:w-96 h-96 flex justify-center md:justify-start items-center">
             <Image src={catImg} alt="Cat Image" className="w-60 h-60 rounded-full" />
             <div className="emblem text-2xl font-Josefin uppercase font-light absolute top-11 left-2/4 md:left-30 animate-spinText">Estef Baena ~ Display Artist ~ </div>

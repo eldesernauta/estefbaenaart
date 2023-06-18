@@ -8,7 +8,7 @@ const Title = () => {
             </div>
             <div className="w/full md:w-3/6 flex flex-col justify-end items-start gap-3">
                 <Line />
-                <h5 className="relative z-20 text-2xl tracking-title">to my site</h5>
+                <h5 className="relative mt-1 z-20 text-2xl tracking-title">to my site</h5>
             </div>
         </section>
     )
