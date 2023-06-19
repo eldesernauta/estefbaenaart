@@ -6,6 +6,7 @@ import { Link } from "react-scroll"
 import Image from 'next/image';
 
 import NavbarButton from './navBarButton';
+const linkStyles="text-white text-sm font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
 
 const logo = require('../src/img/logo.svg')
 
@@ -34,7 +35,7 @@ const NavBar = () => {
             <NavbarButton action={handleToggleMenu} showMenu={showMenu} />
             <div
                 ref={menuRef}
-                className="fixed inset-y-0 left-0 box-border flex flex-col bg-gray-900 w-[calc(100%-15px)] md:w-64 p-6 text-white z-50 justify-between items-start"
+                className="fixed inset-y-0 left-0 box-border flex flex-col bg-black w-[calc(100%-15px)] md:w-64 p-6 text-white z-50 justify-between items-start"
                 >
                 <button
                     className="text-white font-bold text-lg mb-4 absolute top-4 right-4"
@@ -44,22 +45,22 @@ const NavBar = () => {
                 </button>
                 <ul className="font-Josefine">
                     <li className="mb-2">
-                        <Link to="/" spy={true} smooth={true} offset={50} duration={500} className="text-white  text-xl cursor-pointer" onClick={handleToggleMenu}>
+                        <Link to="/" spy={true} smooth={true} offset={50} duration={500} className={linkStyles} onClick={handleToggleMenu}>
                             Home
                         </Link>
                     </li>
                     <li className="mb-2">
-                        <Link to="bio" spy={true} smooth={true} offset={50} duration={500} className="text-white  text-xl cursor-pointer" onClick={handleToggleMenu} >
+                        <Link to="bio" spy={true} smooth={true} offset={50} duration={500} className={linkStyles} onClick={handleToggleMenu} >
                             Bio
                         </Link>
                     </li>
                     <li className="mb-2">
-                        <Link to="commissions" spy={true} smooth={true} offset={50} duration={500} className="text-white  text-xl cursor-pointer" onClick={handleToggleMenu} >
+                        <Link to="commissions" spy={true} smooth={true} offset={50} duration={500} className={linkStyles} onClick={handleToggleMenu} >
                             Commission
                         </Link>
                     </li>
                     <li className="mb-2">
-                        <Link to="contact" spy={true} smooth={true} offset={50} duration={500} className="text-white  text-xl cursor-pointer" onClick={handleToggleMenu} >
+                        <Link to="contact" spy={true} smooth={true} offset={50} duration={500} className={linkStyles} onClick={handleToggleMenu} >
                             Contact
                         </Link>
                     </li>

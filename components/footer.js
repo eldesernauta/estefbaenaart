@@ -1,14 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Link } from "react-scroll"
 import { animateScroll as scroll } from 'react-scroll';
 
-const handleClick = (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+const linkStyles = "text-black px-4 py-0 -m-3 text-sm font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
 
 const Footer = () => {
-    
+
     useEffect(() => {
         const handleClick = (e) => {
             e.preventDefault();
@@ -30,23 +27,22 @@ const Footer = () => {
         };
     }, []);
 
-
     return (
         <section className="container mx-auto flex flex-col lg:flex-row justify-between items-end gap-5 lg:gap-0 pb-10 px-0 lg:px-5 2xl:px-0">
             <div className="w-full lg:w-9/12 flex justify-center lg:justify-start items-stretch lg:items-center gap-0 lg:gap-5">
-                <Link id="top-link" to="/" passhref spy={true} smooth={true} offset={50} duration={500} className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
+                <Link id="top-link" to="/" passhref="true" spy={true} smooth={true} offset={50} duration={500} className={linkStyles}>
                     Home
                 </Link>
                 <Link to="bio" spy={true} smooth={true} offset={50} duration={500}
-                    className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
+                    className={linkStyles}>
                     Bio
                 </Link>
                 <Link to="commissions" spy={true} smooth={true} offset={50} duration={500}
-                    className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
+                    className={linkStyles}>
                     Commissions
                 </Link>
                 <a href="https://linkedin.com" target="_blank"
-                    className="text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer">
+                    className={linkStyles}>
                     Linkedin
                 </a>
             </div>
