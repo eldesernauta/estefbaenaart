@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   //useFileSystemPublicRoutes: false,
-  output: "export"
 }
 
 module.exports = nextConfig
