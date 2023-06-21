@@ -2,11 +2,13 @@
   "name": "estefbaenaart",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://estefbaena.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
