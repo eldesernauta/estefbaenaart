@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '400px',
+      },
       fontFamily: {
         Josefin: ["Josefin Sans", "sans-serif"],
         Slackside: ["Slackside One", "cursive"]

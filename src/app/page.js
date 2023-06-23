@@ -57,11 +57,11 @@ export default function Home() {
       <Title />
 
       {/* Hero section */}
-      <section className="container h-[calc(100vh-300px)] lg:h-[calc(100vh-200px)] 2xl:h-[calc(100vh-300px)] mx-auto flex flex-col-reverse lg:flex-row items-stretch -mt-4 lg:-mt-12 relative px-0 lg:px-5 2xl:px-0">
+      <section className="container h-[calc(100vh-250px)] xs:h-[calc(100vh-300px)] sm:h-[calc(100vh-300px)] md:h-[calc(100vh-300px)] lg:h-[calc(100vh-200px)] 2xl:h-[calc(100vh-300px)] mx-auto flex flex-col-reverse lg:flex-row items-stretch -mt-4 lg:-mt-12 relative px-0 lg:px-5 2xl:px-0">
         <Image src={heroBg} alt="hero image"
           fill
           object-fit="cover"
-          quality={100} className="relative z-0 opacity-50 object-bottom mix-blend-darken pointer-events-none" />
+          quality={100} className="relative z-0 opacity-50 object-cover object-bottom mix-blend-darken pointer-events-none" />
 
         <div className="w-full lg:w-3/6 h-52 lg:h-auto flex flex-col justify-between items-stretch px-5 lg:px-0">
           <hr className="opacity-0" />
@@ -71,7 +71,7 @@ export default function Home() {
             <div className="flex">
               <Line />
               <Link to="commissions" spy={true} smooth={true} offset={50} duration={500}
-                className="w-4/6 sm:w-3/6 md:w-2/6 text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
+                className="w-56 text-black px-4 py-0 -m-3 text-sm rounded font-Josefin uppercase font-semibold tracking-widest cursor-pointer"
               >
                 Read More
               </Link>
